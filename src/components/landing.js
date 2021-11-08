@@ -10,7 +10,9 @@ class Landing extends React.Component {
            
             <div className='restaurant_select'>
                 <div className='restaurant_select_top'>
-                    <div className='restaurant_select_top_header'>Выбери ресторан</div>
+                    <div className='restaurant_select_top_header font-effect-outline'>
+                        Выбери ресторан
+                    </div>
                     <div className='arrow_picker'>
                         <div className='arrow_picker-up'></div>
                         <div className='arrow_picker-down'></div>
