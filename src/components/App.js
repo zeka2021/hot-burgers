@@ -10,7 +10,7 @@ class App extends React.Component {
     state = {
         burgers: {},
         order: {}
-    }
+    };
 
     componentDidMount() {
         const { params } = this.props.match;
