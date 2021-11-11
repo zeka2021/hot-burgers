@@ -13,6 +13,7 @@ class MenuAdmin extends React.Component {
                         key={key}
                         index={key}
                         burger={this.props.burgers[key]}
+                        deleteBurger={this.props.deleteBurger}
                         updateBurger={this.props.updateBurger}
                     />
                 })}
