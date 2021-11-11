@@ -10,7 +10,9 @@ class Order extends React.Component {
 
         const isAvailable = burger && burger.status === 'available';
 
-        if (!burger) return null;
+        if (!burger) {
+            return null
+        };
         
         if (!isAvailable) {
             return (

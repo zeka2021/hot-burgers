@@ -3,9 +3,9 @@ import firebase from 'firebase';
 
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyDmdFx-zRk-mhpuvRZ0UAtvVfA4CQr-SXY",
-    authDomain: "hot-burger-2bcc7.firebaseapp.com",
-    databaseURL: "https://hot-burger-2bcc7-default-rtdb.firebaseio.com",
+ apiKey: "AIzaSyDICPBi-95h508cbi11Vw4Olqz2gP2SnEs",
+  authDomain: "very-hot-burfers.firebaseapp.com",
+  databaseURL: "https://very-hot-burfers-default-rtdb.europe-west1.firebasedatabase.app",
     //   projectId: "hot-burger-2bcc7",
     //   storageBucket: "hot-burger-2bcc7.appspot.com",
     //   messagingSenderId: "734593243312",
