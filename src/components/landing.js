@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import restaurants from '../sample-restaurants';
 
 
@@ -64,4 +65,9 @@ class Landing extends React.Component {
         );
     }
 }
+
+Landing.propTypes = {
+  history: PropTypes.object
+};
+
 export default Landing;

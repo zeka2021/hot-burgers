@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Header from './Header';
 import Order from './Order';
 import MenuAdmin from "./MenuAdmin";
@@ -8,6 +9,9 @@ import base from '../base';
 // import firebase from 'firebase/app';
 
 class App extends React.Component {
+     static propTypes = {
+    match: PropTypes.object
+  };
     state = {
         burgers: {},
         order: {}
