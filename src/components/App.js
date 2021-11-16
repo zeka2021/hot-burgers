@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 import Header from './Header';
 import Order from './Order';
-import MenuAdmin from "./MenuAdmin";
+import MenuAdmin from './MenuAdmin';
 import sampleBurgers from '../sample-burgers';
-import Burger from "./Burger";
+import Burger from './Burger';
 import base from '../base';
+import firebase from 'firebase/app';
+import SignIn from './Auth.js/Signin';
 // import firebase from 'firebase/app';
 
 class App extends React.Component {
@@ -82,8 +84,14 @@ class App extends React.Component {
         delete order[key];
         this.setState({ order });
     };
+
+    handlelogout = async () => {
+        await firebase.auth().signOut();
+        window.location.reload();
+    }
     render() {
         return (
+            <SignIn>
             <div className='burger-paradise'>
                 <div className='menu'>
                     <Header title="Very Hot Burger" />
@@ -108,8 +116,10 @@ class App extends React.Component {
                     burgers={this.state.burgers}
                     updateBurger={this.updateBurger}
                     deleteBurger={this.deleteBurger}
+                    handlelogout={this.handlelogout}
                 />
-            </div>
+                </div>
+                </SignIn>
         );
        
     }

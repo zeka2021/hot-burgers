@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 import Shipment from './Shipment';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
