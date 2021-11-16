@@ -48,12 +48,14 @@ const Landing = props => {
                 <div className='restaurant_select_bottom'>
                     <ul>
                         {restaurants.map(restaurant => {
-                            return <li
+                            return (
+                                <li
                                 onClick={() => getTitle(restaurant)}
                                 key={restaurant.id}
                             >
                                 {restaurant.title}
-                            </li>;
+                                </li>
+                            );
                         })}
                       
                     </ul>

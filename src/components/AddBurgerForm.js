@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 class AddBurgerForm extends React.Component {
 
-      static propTypes = {
-    addBurger: PropTypes.func
+    static propTypes = {
+        addBurger: PropTypes.func
     };
     
     nameRef = React.createRef();
@@ -30,14 +30,14 @@ class AddBurgerForm extends React.Component {
     render() {
         return (
             <form className='burger-edit'onSubmit={this.createBurger} >
-                <input ref={this.nameRef} name='name' type='text' placeholder='Name' autoComplet='off' />
-                <input ref={this.priceRef} name='price' type='text' placeholder='Price' autoComplet='off' />
+                <input ref={this.nameRef} name='name' type='text' placeholder='Name' autoComplete='off' />
+                <input ref={this.priceRef} name='price' type='text' placeholder='Price' autoComplete='off' />
                 <select ref={this.statusRef} name='status' className='status'>
                     <option value='available'>Доступно</option>
                     <option value='unavailable'>Убрать из меню</option>
                 </select>
-                <textarea ref={this.descRef} name='desk' placeholder='Desc'  />
-                <input ref={this.imageRef}name='image' type='text' placeholder='Image' autoComplet='off' />
+                <textarea ref={this.descRef} name='desc' placeholder='Desc'  />
+                <input ref={this.imageRef} name='image' type='text' placeholder='Image' autoComplete='off' />
                 <button type='submit'>+ Добавить в Меню</button>
                 
 

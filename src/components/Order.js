@@ -21,9 +21,8 @@ class Order extends React.Component {
             timeout: { enter: 500, exit: 500 }
         }
 
-        if (!burger) {
-            return null
-        };
+        if (!burger) return null;
+        
         
         if (!isAvailable) {
             return (
@@ -52,7 +51,9 @@ class Order extends React.Component {
                     <button
                         onClick={() => this.props.deleteFromOrder(key)}
                         className='cancellItem'
-                    >&times;</button>
+                        >
+                            &times;
+                        </button>
                 </span>
                 </li>
                 </CSSTransition>
@@ -69,7 +70,7 @@ class Order extends React.Component {
                  return prevTotal + burger.price * count;
             }
             return prevTotal;            
-         }, 0);
+        }, 0);
         return (
             <div className='order-wrap'>
                 <h2>Ваш заказ</h2>

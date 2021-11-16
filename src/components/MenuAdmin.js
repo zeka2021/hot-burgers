@@ -26,7 +26,7 @@ class MenuAdmin extends React.Component {
         });
     }
 
-    authHandler = async (authData) => {
+    authHandler = async authData => {
         const { email, photoURL } = authData.user;
         this.setState({ user: email, photo: photoURL });
     };
@@ -45,16 +45,18 @@ class MenuAdmin extends React.Component {
                         onClick={this.props.handlelogout}
                     >Выйти</button>
                 </div>
-                    ) : null}
+                    ) : null }
                 <h2>Управление Меню</h2>
                 {Object.keys(this.props.burgers).map(key => {
-                    return <EditBurgerForm
+                    return (
+                        <EditBurgerForm
                         key={key}
                         index={key}
                         burger={this.props.burgers[key]}
                         deleteBurger={this.props.deleteBurger}
                         updateBurger={this.props.updateBurger}
                     />
+                   );
                 })}
                 <AddBurgerForm addBurger={this.props.addBurger} />
                 <button onClick={this.props.loadSampleBurgers}>

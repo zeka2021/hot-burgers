@@ -11,9 +11,9 @@ import SignIn from './Auth.js/Signin';
 // import firebase from 'firebase/app';
 
 class App extends React.Component {
-     static propTypes = {
-    match: PropTypes.object
-  };
+    static propTypes = {
+       match: PropTypes.object
+    };
     state = {
         burgers: {},
         order: {}
@@ -71,15 +71,15 @@ class App extends React.Component {
 
 
     loadSampleBurgers = () => {
-        this.setState({ burgers: sampleBurgers });        
-    }
-
-    addToOrder = (key) => {
-        const order = { ...this.state.order }
-        order[key] = order[key] + 1 || 1;
-        this.setState({ order })
+        this.setState({ burgers: sampleBurgers });
     };
-    deleteFromOrder = (key) => {
+
+    addToOrder = key => {
+        const order = { ...this.state.order };
+        order[key] = order[key] + 1 || 1;
+        this.setState({ order });
+    };
+    deleteFromOrder = key => {
         const order = { ...this.state.order };
         delete order[key];
         this.setState({ order });
@@ -88,7 +88,7 @@ class App extends React.Component {
     handlelogout = async () => {
         await firebase.auth().signOut();
         window.location.reload();
-    }
+    };
     render() {
         return (
             <SignIn>
@@ -97,12 +97,14 @@ class App extends React.Component {
                     <Header title="Very Hot Burger" />
                     <ul className='burgers'>
                         {Object.keys(this.state.burgers).map(key => {
-                            return <Burger
+                            return (
+                                <Burger
                                 key={key}
                                 index={key}
                                 addToOrder={this.addToOrder}
                                 details={this.state.burgers[key]}
-                            />;
+                                />
+                            );
                         })}
                     </ul>
                 </div>
@@ -111,7 +113,7 @@ class App extends React.Component {
                     burgers={this.state.burgers}
                     order={this.state.order} />
                 <MenuAdmin
-                 addBurger={this.addBurger}
+                    addBurger={this.addBurger}
                     loadSampleBurgers={this.loadSampleBurgers}
                     burgers={this.state.burgers}
                     updateBurger={this.updateBurger}
